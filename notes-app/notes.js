@@ -43,15 +43,10 @@ const removeNote = function(title){
     console.log('removing title' + title)
     const notes = loadNotes();
     const findTitle = notes.filter(function(note){
-        return note.title === title
+        return note.title !== title
     })
 
-    if(findTitle.lenght === 0){
-        console.log('Note does not exist')
-    }else{
-        notes.pop(title)
-        saveNotes(notes)
-    }
+    saveNotes(findTitle)
 }
 
 module.exports = {
