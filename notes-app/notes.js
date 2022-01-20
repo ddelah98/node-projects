@@ -26,7 +26,7 @@ const saveNotes = (notes) => {
     fs.writeFileSync('notes.json', dataJSON);
 }
 
-const loadNotes = function(){
+const loadNotes = () =>{
     try {
     const dataBuffer = fs.readFileSync('notes.json')
     const dataJSON = dataBuffer.toString();
@@ -42,7 +42,7 @@ const removeNote = (title) => {
     console.log('removing title' + title)
     const notes = loadNotes();
     const findTitle = notes.filter((note) => note.title !== title)
-    
+
     if(notes.length > findTitle.length){
         console.log(chalk.black.bgGreen('Note Removed !'))
         saveNotes(findTitle)
