@@ -46,11 +46,12 @@ const removeNote = function(title){
     const findTitle = notes.filter(function(note){
         return note.title !== title
     })
-    if(findTitle.lenght > 0 ){
-        console.log(chalk.black.bgRed(' No Note Found !'))
-    }
-    console.log(chalk.black.bgGreen('Note Removed !'))
+    if(notes.length > findTitle.length){
+        console.log(chalk.black.bgGreen('Note Removed !'))
         saveNotes(findTitle)
+    }else{
+    console.log(chalk.black.bgRed(' No Note Found !'))
+    }
 }
 
 module.exports = {
