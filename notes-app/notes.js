@@ -12,14 +12,14 @@ const addNote = function(title, body){
     })
 
     if(duplicateNotes.length === 0){
-        console.log('New Note Added...')
         notes.push({
             title: title,
             body: body
         })
         saveNotes(notes)
+        console.log(chalk.black.bgGreen('New Note Added...'))
     }else{
-        console.log('Note Title in use');
+        console.log(chalk.black.bgRed(' Note Title in use'))
     }
 }
 
