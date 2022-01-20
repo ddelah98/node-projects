@@ -3,6 +3,7 @@ const yargs = require('yargs')
 const notes = require('./notes.js')
 const getNotes = require('./notes.js')
 const removeNote = require('./notes.js')
+const listNotes = require('./notes.js')
 
 // Customize yargs version
 yargs.version('1.1.0')
@@ -53,6 +54,7 @@ yargs.command({
     describe: 'List your notes',
     handler() {
         console.log('Listing out all notes')
+        notes.listNotes()
     }
 })
 
